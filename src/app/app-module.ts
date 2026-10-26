@@ -5,11 +5,18 @@ import { App } from './app';
 import { ServiceComics } from './services/service.comics';
 import { ComicsComponent } from './components/comics-component/comics-component';
 import { provideHttpClient } from '@angular/common/http';
+import { ServicePersonas } from './services/service.personas';
+import { PersonasApiComponent } from './components/personas-api-component/personas-api-component';
 
 @NgModule({
-  declarations: [App, ComicsComponent],
+  declarations: [App, ComicsComponent, PersonasApiComponent],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [provideBrowserGlobalErrorListeners(), ServiceComics, provideHttpClient()],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient(),
+    ServiceComics,
+    ServicePersonas,
+  ],
   bootstrap: [App],
 })
 export class AppModule {}
